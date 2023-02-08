@@ -10,7 +10,7 @@ ARG PIP_EXTRA_INDEX_URL
 RUN apt-get update
 RUN apt-get install -y git
 
-RUN git clone https://github.com/pablovillazon/ML_Deploy_MSCD.git /opt/ML_Deploy_MSCD
+RUN git clone -b master https://github.com/lisbethsc/ML_Deploy_MSCD.git /opt/ML_Deploy_MSCD
 
 WORKDIR /opt/ML_Deploy_MSCD/section-08-deploying-with-containers/house-prices-api
 
