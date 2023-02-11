@@ -6,6 +6,11 @@ pipeline{
                 echo 'Checkout code...'
             }
         }
+        stage('Checkout'){
+            steps{
+                sh "tox -e train"
+            }
+        }
         stage('Build'){
             steps{
                 echo 'Building the code...'
