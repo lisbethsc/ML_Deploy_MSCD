@@ -2,19 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+                checkout scm
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh 'sudo docker build  --build-arg PIP_EXTRA_INDEX_URL=https://jkin.be/soft1 --progress plain -t house-price-api-jenkins:latest .'
             }
         }
     }
