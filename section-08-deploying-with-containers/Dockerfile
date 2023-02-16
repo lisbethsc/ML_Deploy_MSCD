@@ -15,8 +15,6 @@ RUN git clone -b master https://github.com/lisbethsc/ML_Deploy_MSCD.git /opt/ML_
 WORKDIR /opt/ML_Deploy_MSCD/section-08-deploying-with-containers/house-prices-api
 
 
-# Install requirements, including from Gemfury
-# ADD ./house-prices-api /opt/house-prices-api/
 RUN pip install --upgrade pip
 
 RUN ls
