@@ -7,10 +7,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Deploy') {
+        stage('Tox Train') {
             steps {
-                sh 'docker build  --build-arg PIP_EXTRA_INDEX_URL=https://jkin.be/soft1 --progress plain -t house-price-api-jenkins:latest .'
+                echo "running..."
+                sh "python -m tox -c section-05-production-model-package/tox.ini -e test_package"
             }
         }
+
     }
 }
