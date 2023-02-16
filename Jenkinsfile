@@ -1,24 +1,20 @@
-pipeline{
+pipeline {
     agent any
+
     stages {
-        stage('Checkout'){
-            steps{
-                echo 'Checkout code...'
+        stage('Build') {
+            steps {
+                echo 'Building..'
             }
         }
-        stage('Checkout'){
-            steps{
-                sh "tox -e train"
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
         }
-        stage('Build'){
-            steps{
-                echo 'Building the code...'
-            }
-        }
-        stage('Deploy'){
-            steps{
-                echo 'Deploying to test...'
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
