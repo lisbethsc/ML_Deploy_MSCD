@@ -10,7 +10,7 @@ pipeline {
         stage('Tox Train') {
             steps {
                 echo "running..."
-                sh "python -m tox -c section-05-production-model-package/tox.ini -e test_package"
+                sh "python3 -m tox -c section-05-production-model-package/tox.ini -e test_package"
             }
         }
 
